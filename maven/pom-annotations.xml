@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.google.jsinterop</groupId>
+    <artifactId>jsinterop</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <groupId>__GROUP_ID__</groupId>
+  <artifactId>__ARTIFACT_ID__</artifactId>
+  <version>__VERSION__</version>
+  <packaging>jar</packaging>
+
+  <name>JsInterop Annotations</name>
+  <description>JsInterop Annotations contains a set of java annotations that drive the javascript
+    code generation of J2CL transpiler or GWT</description>
+  <url>https://github.com/google/jsinterop-annotations</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/google/jsinterop-annotations.git</connection>
+    <developerConnection>scm:git:git@github.com:google/jsinterop-annotations.git</developerConnection>
+    <url>https://github.com/google/jsinterop-annotations</url>
+  </scm>
+
+  <issueManagement>
+    <url>https://github.com/google/jsinterop-annotations/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <name>J2CL team</name>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+  </developers>
+</project>
