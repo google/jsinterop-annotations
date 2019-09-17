@@ -51,7 +51,7 @@ import java.lang.annotation.Target;
  *
  * <ul>
  *   <li>No instance fields are allowed other than {@code value},
- *   <li>{@link Enum#name()} and {@link Enum#values()} are not supported.
+ *   <li>{@link Enum#name()} and {@code values()} are not supported.
  *   <li>{@link Enum#ordinal()} is supported only for non-native JsEnums that don't have custom
  *       values.
  *   <li>The class is initialization might be delayed until a static field/method is accessed.
