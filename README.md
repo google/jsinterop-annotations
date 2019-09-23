@@ -28,11 +28,11 @@ external dependency in your `WORKSPACE` file:
 
 ```
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
+_JSINTEROP_ANNOTATIONS_VERSION = "2.0.0"
 http_archive(
     name = "com_google_jsinterop_annotations",
-    strip_prefix = "jsinterop-annotations-master",
-    url = "https://github.com/google/jsinterop-annotations/archive/master.zip",
+    strip_prefix = "jsinterop-annotations-%s" % _JSINTEROP_ANNOTATIONS_VERSION,
+    url = "https://github.com/google/jsinterop-annotations/archive/%s.zip" % _JSINTEROP_ANNOTATIONS_VERSION,
 )
 ```
 
@@ -50,7 +50,9 @@ your pom.xml:
         <version>1.0.2</version>
     </dependency>
 
-
+The last version fully compatible with GWT is `1.0.2`. The `2.0` release brings
+new annotations specific to [J2CL](https://github.com/google/j2cl). We recommend
+GWT users to stick with the `1.0.2` release.
 
 Download the jar file
 ----------------------
