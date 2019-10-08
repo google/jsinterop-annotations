@@ -3,7 +3,7 @@
 #
 
 package(
-    default_visibility = ["//:__pkg__"],
+    default_visibility = ["//visibility:public"],
 )
 
 licenses(["notice"])  # Apache2
