@@ -3,7 +3,7 @@
 #
 
 package(
-    default_visibility = ["//third_party/java/jsinterop_annotations:__pkg__"],
+    default_visibility = ["//visibility:public"],
 )
 
 licenses(["notice"])
