@@ -1,6 +1,5 @@
 # Description:
 #   Jsinterop Annotations for J2CL/GWT
-#
 
 package(
     default_visibility = ["//visibility:public"],
