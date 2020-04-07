@@ -70,7 +70,7 @@ fi
 
 bazel_root=$(pwd)
 
-deploy_target='@com_google_j2cl//:deploy'
+deploy_target='@com_google_j2cl//maven:deploy'
 group_id="com.google.jsinterop"
 maven_artifact="jsinterop-annotations"
 
