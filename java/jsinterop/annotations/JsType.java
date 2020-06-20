@@ -46,7 +46,7 @@ import java.lang.annotation.Target;
  * explicitly marked with {@link JsOverlay}.
  *
  * <p>For native interfaces with no particular JavaScript type associated with them (e.g. structural
- * types) it is recommeded to use {@code namespace = JsPackage.GLOBAL} and {@code name = '?'}.
+ * types) it is recommended to use {@code namespace = JsPackage.GLOBAL} and {@code name = '?'}.
  *
  * <p><b>Instanceof and Castability:</b>
  *
