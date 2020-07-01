@@ -6,7 +6,7 @@ or [GWT](https://github.com/gwtproject/gwt)
 
 Bazel dependency
 ----------------
-If your project use [Bazel](https://bazel.build), add this repository as an
+If your project uses [Bazel](https://bazel.build), add this repository as an
 external dependency in your `WORKSPACE` file:
 
 ```
@@ -24,8 +24,8 @@ your `j2cl_library` deps.
 
 Maven dependency
 ----------------
-If your project use [Maven](https://maven.apache.org), add maven dependency in
-your pom.xml:
+If your project uses [Maven](https://maven.apache.org), add the following maven
+dependency in your `pom.xml`:
 
     <dependency>
         <groupId>com.google.jsinterop</groupId>
@@ -46,11 +46,21 @@ Build GWT compatible maven jar files
 If you want to build the last version on your own, follow the instructions
 below:
 
-- Install [Bazel](https://bazel.build/versions/master/docs/install.html).
-- clone this repository with git: `git clone https://github.com/google/jsinterop-annotations.git`
- Inside the repository, run the script `maven/release_jsinterop_annotations.sh`:
+- Install [Bazelisk](https://github.com/bazelbuild/bazelisk):
 
-       $ ./maven/release_jsinterop_annotations.sh --version local --no-deploy
+```shell
+    $ npm install -g @bazel/bazelisk
+    $ alias bazel=bazelisk
+```
+- Clone this git repository:
+  ```shell
+  $ git clone https://github.com/google/jsinterop-annotations.git
+  ```
+- Run the release script:
+  ```shell
+      $ cd jsinterop-annotations
+      $ ./maven/release_jsinterop_annotations.sh --version local --no-deploy
+  ```
 
  The script will output the directory containing the generated jar files that
  can be used with maven.
