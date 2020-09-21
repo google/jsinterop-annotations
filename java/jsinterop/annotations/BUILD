@@ -8,7 +8,7 @@ package(
     default_visibility = ["//:__pkg__"],
 )
 
-licenses(["notice"])  # Apache2
+licenses(["notice"])
 
 java_library(
     name = "annotations",
