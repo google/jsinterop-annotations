@@ -28,3 +28,8 @@ alias(
     name = "jsinterop-annotations-j2cl",
     actual = "//java/jsinterop/annotations:annotations-j2cl",
 )
+
+alias(
+    name = "jsinterop-annotations-j2wasm",
+    actual = "//java/jsinterop/annotations:annotations-j2wasm",
+)
