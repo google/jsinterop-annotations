@@ -1,4 +1,4 @@
-# JsInterop Annotations   &middot; [![Build Status](https://secure.travis-ci.org/google/jsinterop-annotations.png?branch=master)](http://travis-ci.org/google/jsinterop-annotations)
+# JsInterop Annotations   &middot; [![Build Status](https://github.com/google/jsinterop-annotations/workflows/build%20and%20test/badge.svg)
 
 JsInterop Annotations contains a set of java annotations that drive the
 javascript code generation of [J2CL transpiler](https://github.com/google/j2cl)
