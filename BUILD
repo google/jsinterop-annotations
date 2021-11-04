@@ -3,6 +3,7 @@
 #
 
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("//third_party/java/j2cl:j2cl_alias.bzl", "j2cl_alias")
 
 package(
     default_visibility = ["//visibility:public"],
@@ -21,15 +22,10 @@ build_test(
 
 alias(
     name = "jsinterop-annotations",
-    actual = "//java/jsinterop/annotations",
+    actual = "//java/jsinterop/annotations:annotations",
 )
 
-alias(
+j2cl_alias(
     name = "jsinterop-annotations-j2cl",
     actual = "//java/jsinterop/annotations:annotations-j2cl",
-)
-
-alias(
-    name = "jsinterop-annotations-j2wasm",
-    actual = "//java/jsinterop/annotations:annotations-j2wasm",
 )
