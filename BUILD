@@ -3,7 +3,7 @@
 #
 
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-load("//third_party/java/j2cl:j2cl_alias.bzl", "j2cl_alias")
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_alias")
 
 package(
     default_visibility = ["//visibility:public"],
