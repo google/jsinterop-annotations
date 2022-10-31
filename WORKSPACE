@@ -17,3 +17,12 @@ load_j2cl_repo_deps()
 load("@com_google_j2cl//build_defs:rules.bzl", "setup_j2cl_workspace")
 
 setup_j2cl_workspace()
+
+http_archive(
+  name = "rules_license",
+  sha256 = "00ccc0df21312c127ac4b12880ab0f9a26c1cff99442dc6c5a331750360de3c3",
+  urls = [
+    "https://mirror.bazel.build/github.com/bazelbuild/rules_license/releases/download/0.0.3/rules_license-0.0.3.tar.gz",
+    "https://github.com/bazelbuild/rules_license/releases/download/0.0.3/rules_license-0.0.3.tar.gz",
+  ],
+)

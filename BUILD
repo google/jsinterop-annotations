@@ -2,12 +2,20 @@
 #   Jsinterop Annotations for J2CL/GWT
 #
 
+load("@rules_license//rules:license.bzl", "license")
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_alias")
 
 package(
+    default_applicable_licenses = ["//:license"],
     default_visibility = ["//visibility:public"],
     licenses = ["notice"],
+)
+
+license(
+    name = "license",
+    package_name = "jsinterop_annotations",
+    license_kinds = ["@rules_license//licenses/spdx:Apache-2.0"],
 )
 
 exports_files(["LICENSE"])
