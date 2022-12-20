@@ -40,7 +40,7 @@ import java.lang.annotation.Target;
  *
  * <p><b>Instanceof and Castability:</b>
  *
- * <p>Instanceof and casting for JsFunction is effectively a JavaScript <tt>'typeof'</tt> check to
+ * <p>Instanceof and casting for JsFunction is effectively a JavaScript {@code typeof} check to
  * determine if the instance is a function.
  */
 @Retention(RetentionPolicy.RUNTIME)

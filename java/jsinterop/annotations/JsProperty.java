@@ -35,8 +35,8 @@ import java.lang.annotation.Target;
  * the JavaBean convention is not followed, the name should be set explicitly. For example:
  *
  * <ul>
- *   <li>{@code @JsProperty getX()} or {@code @JsProperty isX()} translates as <tt>this.x</tt>
- *   <li>{@code @JsProperty setX(int y)} translates as <tt>this.x=y</tt>
+ *   <li>{@code @JsProperty getX()} or {@code @JsProperty isX()} translates as {@code this.x}
+ *   <li>{@code @JsProperty setX(int y)} translates as {@code this.x=y}
  * </ul>
  *
  * <p>Note: In JavaScript, instance members are defined on the prototype and class members are
