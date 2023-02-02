@@ -15,7 +15,6 @@ package(
 license(
     name = "license",
     package_name = "jsinterop_annotations",
-    license_kinds = ["@rules_license//licenses/spdx:Apache-2.0"],
 )
 
 exports_files(["LICENSE"])
