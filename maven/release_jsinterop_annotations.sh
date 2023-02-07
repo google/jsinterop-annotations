@@ -97,7 +97,7 @@ bazel run --script_path="$runcmd" ${deploy_target} -- ${deploy_flag} \
     --artifact ${maven_artifact} \
     --jar-file ${jar_file} \
     --src-jar ${src_jar} \
-    --javadoc-jar ${javadoc_jar}
+    --javadoc-jar ${javadoc_jar} \
     --pom-template ${pom_template} \
     --lib-version ${lib_version} \
     --group-id ${group_id} \
