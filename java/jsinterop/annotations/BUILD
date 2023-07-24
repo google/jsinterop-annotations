@@ -38,6 +38,14 @@ javadoc_library(
     ],
 )
 
+alias(
+    name = "annotations-j2cl_jar",
+    actual = ":annotations",
+    visibility = [
+        "@com_google_j2cl//third_party:__pkg__",
+    ],
+)
+
 j2cl_import(
     name = "annotations-j2cl",
     jar = ":annotations_jar",
