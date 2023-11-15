@@ -30,11 +30,11 @@ build_test(
 alias(
     name = "jsinterop-annotations",
     actual = "//java/jsinterop/annotations:annotations",
-    tags = ["avoid_dep"],  # Use //third_party/java/jsinterop:jsinterop-annotations instead.
+    tags = ["avoid_dep"],  # Use //third_party/java/jsinterop_annotations:jsinterop-annotations instead.
 )
 
 j2cl_alias(
     name = "jsinterop-annotations-j2cl",
     actual = "//java/jsinterop/annotations:annotations-j2cl",
-    tags = ["avoid_dep"],  # Use //third_party/java/jsinterop:jsinterop-annotations-j2cl instead.
+    tags = ["avoid_dep"],  # Use //third_party/java/jsinterop_annotations:jsinterop-annotations-j2cl instead.
 )
