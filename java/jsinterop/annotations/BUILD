@@ -2,8 +2,8 @@
 #   Jsinterop Annotations for J2CL/GWT
 #
 
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_import")
 load("@bazel_common_javadoc//:javadoc.bzl", "javadoc_library")
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_import")
 
 package(
     default_applicable_licenses = ["//:license"],

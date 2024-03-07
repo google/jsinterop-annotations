@@ -2,9 +2,9 @@
 #   Jsinterop Annotations for J2CL/GWT
 #
 
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_alias")
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@rules_license//rules:license.bzl", "license")
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_alias")
 
 package(
     default_applicable_licenses = ["//:license"],
