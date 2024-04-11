@@ -8,7 +8,10 @@ load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_alias")
 
 package(
     default_applicable_licenses = ["//:license"],
-    default_visibility = ["//visibility:public"],
+    default_visibility = [
+        "//third_party/java/jsinterop_annotations:__subpackages__",
+        "@com_google_j2cl//:__subpackages__",
+    ],
     licenses = ["notice"],
 )
 
