@@ -48,9 +48,6 @@ import java.lang.annotation.Target;
  * <p>For native interfaces with no particular JavaScript type associated with them (e.g. structural
  * types) it is recommended to use {@code namespace = JsPackage.GLOBAL} and {@code name = '?'}.
  *
- * <p>If a Java {@code record} is marked a "non-native" JsType  public accessor methods are treated
- * as though they are annotated with {@link JsProperty}.
- *
  * <p><b>Instanceof and Castability:</b>
  *
  * <p>If the JsType is native, the generated code will try to mimic Javascript semantics.
