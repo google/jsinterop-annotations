@@ -27,8 +27,8 @@ import java.lang.annotation.Target;
  *
  * <p>If it is applied to a method, it will be treated as a property accessor. As a result, instead
  * of translating method calls to JsProperty methods as method calls in JS, they will be translated
- * as property lookups. When a JsProperty method implemented by a Java class, such methods will be
- * generated as property accessor in JavaScript, hence the property access will trigger the
+ * as property lookups. When a JsProperty method is implemented by a Java class, such methods will
+ * be generated as property accessors in JavaScript, hence the property access will trigger the
  * execution of the matching getter or setter methods.
  *
  * <p>JsProperty follows JavaBean style naming convention to extract the default property name. If
@@ -38,6 +38,11 @@ import java.lang.annotation.Target;
  *   <li>{@code @JsProperty getX()} or {@code @JsProperty isX()} translates as {@code this.x}
  *   <li>{@code @JsProperty setX(int y)} translates as {@code this.x=y}
  * </ul>
+ *
+ * <p>When applied to {@code record} components, the annotation will only apply to the accessor and
+ * not to the field - otherwise this would result in a naming conflict. Additionally, the JavaBean
+ * style convention is not required, as record accessors do not being with {@code get-} or
+ * {@code is-}.
  *
  * <p>Note: In JavaScript, instance members are defined on the prototype and class members are
  * defined on the constructor function of the type which mimics ES6 class style.
