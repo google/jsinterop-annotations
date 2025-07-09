@@ -37,8 +37,8 @@ usage() {
     echo "        Skip the deployment part but build all artifacts."
     echo "    --no-git-tag"
     echo "        Skip the creation of git tag."
-    echo "    --sonatype-auto-release"
-    echo "        Release automatically the artifact on sonatype."
+    echo "    --sonatype-auto-publish"
+    echo "        Publish automatically the artifact on sonatype."
     echo ""
 }
 
@@ -46,7 +46,7 @@ parse_arguments() {
   deploy_to_sonatype=true
   git_tag=true
   lib_version=""
-  sonatype_auto_release=false
+  sonatype_auto_publish=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -64,8 +64,8 @@ parse_arguments() {
         usage
         exit 0
         ;;
-      --sonatype-auto-release)
-        sonatype_auto_release=true
+      --sonatype-auto-publish)
+        sonatype_auto_publish=true
         ;;
       * )
         common::error "unexpected option $1"
