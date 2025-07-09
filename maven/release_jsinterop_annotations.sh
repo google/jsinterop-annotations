@@ -19,13 +19,10 @@ set -euo pipefail
 
 source "$(dirname "$0")/deploy.sh"
 
-readonly GROUP_ID="com.google.jsinterop"
 readonly MAVEN_ARTIFACT="jsinterop-annotations"
-readonly JAR_FILE=${BAZEL_ROOT}/bazel-bin/java/jsinterop/annotations/libannotations.jar
-readonly SRC_JAR=${BAZEL_ROOT}/bazel-bin/java/jsinterop/annotations/libannotations-src.jar
-readonly JAVADOC_JAR=${BAZEL_ROOT}/bazel-bin/java/jsinterop/annotations/annotations-javadoc.jar
-readonly POM_TEMPLATE=${BAZEL_ROOT}/maven/pom-annotations.xml
-
+readonly BAZEL_ARTIFACT="annotations"
+readonly BAZEL_PATH="java/jsinterop/annotations"
+readonly COPY_SRCS_IN_JAR=false
 
 usage() {
     echo ""
@@ -40,22 +37,25 @@ usage() {
     echo "        Skip the deployment part but build all artifacts."
     echo "    --no-git-tag"
     echo "        Skip the creation of git tag."
+    echo "    --sonatype-auto-release"
+    echo "        Release automatically the artifact on sonatype."
     echo ""
 }
 
 parse_arguments() {
-  deploy_flag=""
+  deploy_to_sonatype=true
   git_tag=true
   lib_version=""
+  sonatype_auto_release=false
 
   while [[ $# -gt 0 ]]; do
-    case $1 in
+    case "$1" in
       --version )
         shift
         lib_version=$1
         ;;
       --no-deploy )
-        deploy_flag="--no-deploy"
+        deploy_to_sonatype=false
         ;;
       --no-git-tag )
         git_tag=false
@@ -63,6 +63,9 @@ parse_arguments() {
       --help )
         usage
         exit 0
+        ;;
+      --sonatype-auto-release)
+        sonatype_auto_release=true
         ;;
       * )
         common::error "unexpected option $1"
@@ -72,35 +75,18 @@ parse_arguments() {
   done
 }
 
-check_prerequisites() {
-  common::check_bazel
-  common::check_maven
-  common::check_version_set
-}
-
-build() {
-  common::bazel_build //java/jsinterop/annotations:libannotations.jar
-  common::bazel_build //java/jsinterop/annotations:libannotations-src.jar
-  common::bazel_build //java/jsinterop/annotations:annotations-javadoc.jar
-}
-
 main() {
   parse_arguments "$@"
-  check_prerequisites
-  build
 
-  common::deploy_to_sonatype ${deploy_flag} \
-      --artifact ${MAVEN_ARTIFACT} \
-      --jar-file ${JAR_FILE} \
-      --src-jar ${SRC_JAR} \
-      --javadoc-jar ${JAVADOC_JAR} \
-      --pom-template ${POM_TEMPLATE} \
-      --lib-version ${lib_version} \
-      --group-id ${GROUP_ID} \
-      --no-merge-src
+  common::check_version_set
+  common::check_bazel_prerequisites
+  common::check_maven_prerequisites
+
+  common::build
+  common::deploy_to_sonatype
 
   if [[ ${git_tag} == true ]]; then
-    common::create_and_push_git_tag ${lib_version}
+    common::create_and_push_git_tag "${lib_version}"
   fi
 }
 
