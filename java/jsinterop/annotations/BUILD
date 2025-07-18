@@ -3,8 +3,7 @@
 #
 
 load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
-load("@rules_java//java:defs.bzl", "java_import", "java_library")
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_import")
+load("@rules_java//java:defs.bzl", "java_library")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -25,21 +24,4 @@ javadoc_library(
         "manual",
         "notap",
     ],
-)
-
-# Re-import only the output jar, dropping all transitive dependencies in the
-# process. This is important for JsInterop Annotations as these are used by
-# the J2CL-emulated JRE itself and thus cannot have any dependencies outside of
-# toolchain's bootclasspath.
-java_import(
-    name = "annotations-j2cl_jar",
-    jars = [":libannotations.jar"],
-    tags = ["incomplete-deps"],
-    # Grant access to J2CL JRE to include it in the bootclasspath which is a java_library.
-    visibility = ["@com_google_j2cl//third_party:__pkg__"],
-)
-
-j2cl_import(
-    name = "annotations-j2cl",
-    jar = ":annotations-j2cl_jar",
 )
