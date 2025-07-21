@@ -1,7 +1,4 @@
-module(
-    name = "jsinterop_annotations",
-    repo_name = "com_google_jsinterop_annotations",
-)
+module(name = "jsinterop_annotations")
 
 bazel_dep(
     name = "rules_java",
