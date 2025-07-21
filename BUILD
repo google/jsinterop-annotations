@@ -9,7 +9,7 @@ package(
     default_applicable_licenses = ["//:license"],
     default_visibility = [
         "//third_party/java/jsinterop_annotations:__subpackages__",
-        "@com_google_j2cl//:__subpackages__",
+        "@j2cl//:__subpackages__",
     ],
     licenses = ["notice"],
 )
