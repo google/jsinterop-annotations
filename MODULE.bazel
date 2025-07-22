@@ -1,27 +1,9 @@
 module(name = "jsinterop_annotations")
 
-bazel_dep(
-    name = "rules_java",
-    version = "8.13.0",
-)
-
-bazel_dep(
-    name = "bazel_skylib",
-    version = "1.7.1",
-)
-
-bazel_dep(
-    name = "rules_license",
-    version = "1.0.0",
-)
-
-bazel_dep(
-    name = "google_bazel_common",
-    version = "0.0.1",
-)
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "google_bazel_common", version = "0.0.1")
+bazel_dep(name = "rules_java", version = "8.13.0")
+bazel_dep(name = "rules_license", version = "1.0.0")
 
 # Bump the rules_python version to workaround https://github.com/bazel-contrib/rules_python/issues/1169
-bazel_dep(
-    name = "rules_python",
-    version = "1.4.1",
-)
+bazel_dep(name = "rules_python", version = "1.4.1")
