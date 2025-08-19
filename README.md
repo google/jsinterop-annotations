@@ -1,4 +1,4 @@
-# JsInterop Annotations   &middot; [![Build Status](https://github.com/google/jsinterop-annotations/actions/workflows/ci.yaml/badge.svg)](https://github.com/google/jsinterop-annotations/actions/workflows/ci.yaml)
+# JsInterop Annotations &middot; ![Latest Release](https://img.shields.io/github/v/release/google/jsinterop-annotations) &middot; [![Build Status](https://github.com/google/jsinterop-annotations/actions/workflows/ci.yaml/badge.svg)](https://github.com/google/jsinterop-annotations/actions/workflows/ci.yaml)
 
 
 
