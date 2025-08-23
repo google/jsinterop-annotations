@@ -8,36 +8,21 @@ or [GWT](https://github.com/gwtproject/gwt)
 
 Bazel dependency
 ----------------
-If your project uses [Bazel](https://bazel.build), add this repository as an
-external dependency in your `WORKSPACE` file:
-
-```
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-_JSINTEROP_ANNOTATIONS_VERSION = "2.0.2"
-http_archive(
-    name = "com_google_jsinterop_annotations",
-    strip_prefix = "jsinterop-annotations-%s" % _JSINTEROP_ANNOTATIONS_VERSION,
-    url = "https://github.com/google/jsinterop-annotations/archive/%s.zip" % _JSINTEROP_ANNOTATIONS_VERSION,
-)
-```
-
-Then add `@com_google_jsinterop_annotations//:jsinterop-annotations-j2cl` to
-your `j2cl_library` deps.
+If your project uses [Bazel](https://bazel.build), J2CL repository already
+provides targets `@j2cl//:jsinterop-annotations` and
+`@j2cl://jsinterop-annotations-j2cl` for Server/Android and J2CL respectively.
 
 Maven dependency
 ----------------
 If your project uses [Maven](https://maven.apache.org), add the following maven
-dependency in your `pom.xml`:
+dependency in your `pom.xml`. Replace `RELEASE_VERSION` with an actual
+[release version](https://github.com/google/jsinterop-annotations/releases):
 
     <dependency>
-        <groupId>com.google.jsinterop</groupId>
-        <artifactId>jsinterop-annotations</artifactId>
-        <version>2.0.2</version>
+      <groupId>com.google.jsinterop</groupId>
+      <artifactId>jsinterop-annotations</artifactId>
+      <version>RELEASE_VERSION</version>
     </dependency>
-
-Download the jar file
-----------------------
-You can also download manually [the jar file](https://repo1.maven.org/maven2/com/google/jsinterop/jsinterop-annotations/2.0.2/jsinterop-annotations-2.0.2.jar).
 
 Build GWT compatible maven jar files
 ------------------------------------
