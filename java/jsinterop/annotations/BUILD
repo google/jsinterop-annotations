@@ -15,6 +15,8 @@ licenses(["notice"])
 java_library(
     name = "annotations",
     srcs = glob(["*.java"]),
+    # Keep compatibility with Java 11 for open source GWT.
+    javacopts = ["-source 11 -target 11"],
 )
 
 javadoc_library(
