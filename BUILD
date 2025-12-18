@@ -6,7 +6,7 @@ load("@bazel_skylib//rules:build_test.bzl", "build_test")
 load("@rules_license//rules:license.bzl", "license")
 
 package(
-    default_applicable_licenses = ["//:license"],
+    default_applicable_licenses = [":license"],
     default_visibility = [
         "//third_party/java/jsinterop_annotations:__subpackages__",
         "@j2cl//:__subpackages__",
