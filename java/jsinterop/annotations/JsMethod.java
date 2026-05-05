@@ -23,7 +23,7 @@ import java.lang.annotation.Target;
 
 /**
  * JsMethod marks a method that will be directly translated into a JavaScript method preserving its
- * name.
+ * name. They are not allowed on record component accessors.
  *
  * <p>Note: In JavaScript, instance members are defined on the prototype and class members are
  * defined on the constructor function of the type.

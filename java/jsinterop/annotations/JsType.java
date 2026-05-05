@@ -40,10 +40,15 @@ import java.lang.annotation.Target;
  * <p>Name collisions must be avoided by providing custom names (e.g. {@link JsProperty#name}) or by
  * ignoring members using {@link JsIgnore}.
  *
+ * <p>When applied to a Java record, all public record components are implicitly exposed as
+ * read-only properties. The canonical constructor is also implicitly exposed as a {@link
+ * JsConstructor}. Non-canonical constructors cannot be exposed so they should be marked with {@link
+ * JsIgnore}.
+ *
  * <p>If the JsType is marked as "native" via {@link #isNative}, then the type is considered a stub
  * for an existing class that is available in native JavaScript. Unlike non-native JsTypes, all
  * members are considered {@link JsProperty}/{@link JsMethod}/{@link JsConstructor} unless they are
- * explicitly marked with {@link JsOverlay}.
+ * explicitly marked with {@link JsOverlay}. Records cannot be marked as native.
  *
  * <p>For native interfaces with no particular JavaScript type associated with them (e.g. structural
  * types) it is recommended to use {@code namespace = JsPackage.GLOBAL} and {@code name = '?'}.
