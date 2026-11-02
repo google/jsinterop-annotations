@@ -45,7 +45,9 @@ import java.lang.annotation.Target;
  * </code></pre>
  *
  * <p>If the JsEnum is native and has custom values, the value field is still required but
- * constructors are not needed nor allowed.
+ * constructors are not needed nor allowed. The values of a native JsEnum must not be {@code null}
+ * or {@code undefined}; JavaScript APIs that use {@code null} alongside enum values should be
+ * modeled with {@code @Nullable} JsEnum references instead.
  *
  * <p>JsEnums do not support the full Java semantics:
  *
@@ -85,7 +87,7 @@ public @interface JsEnum {
   /**
    * When set to {@code true}, this JsEnum will have a custom value defined by a field named
    * 'value'. The only allowed types for the value field are String and primitive types with the
-   * exception of long.
+   * exception of long, and constant values cannot be {@code null}.
    */
   boolean hasCustomValue() default false;
 }
