@@ -28,7 +28,7 @@ import java.lang.annotation.Target;
  *
  * <p>Marking an object with JsType is similar to marking each public member of the class with
  * {@link JsProperty}/{@link JsMethod}/{@link JsConstructor} respectively. In order for this to work
- * correctly the JavaScript name needs to be unique for each member. Some unobvious ways to cause
+ * correctly the JavaScript name needs to be unique for each member. Some nonobvious ways to cause
  * name collisions are:
  *
  * <ul>
